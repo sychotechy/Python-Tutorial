@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>
+	 
+      Spoken Tutorial Forums
+      
+</title>
+        <link rel="stylesheet" href="../../../includes/css/bootstrap_forum.min.css" type="text/css" media="screen" charset="utf-8" />
+         <link rel="stylesheet" href="../../../includes/css/slick.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="../../../includes/css/main_forum.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="../../../includes/css/nice-bar.css" type="text/css" media="screen" charset="utf-8" />
+      <link rel="stylesheet" href="../../../includes/css/theme.blue.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	 <div id="page-wrapper">
+        <div id="header-wrapper">
+            <div id="header-inner">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-brand">
+                                <img id="logo" src="../../../includes/images/logo.png">
+                                Spoken Tutorial Forums
+                                </div>
+                        </div>
+                        </div> <!-- /.container -->
+                </nav>
+            </div> <!-- /#header-inner -->
+        </div>
+        <div id="content-wrapper">
+            <div id="content-inner" class="container">
+                <div id="content" class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <div class="row">
+    <div class="question-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="question ">
+        <div class="title ">
+           Error in code
+        </div>
+        
+        <div id="questionNicPanel"></div>
+        <div class="body">
+            To practice i had created another matrix find its inverse and check whether its multiplication with it's inverse is giving an identity matrix or not. as you had said that multiplication with it's inverse gives an identity matrix&nbsp;so the result of allclose function has to be True but I am getting False. I am sharing the code please tell me where the mistake is?<div><br><div><div>#calculating determinant of a matrix</div><div>from numpy.linalg import det</div><div>m=asmatrix(arange(1,10).reshape(3,3))</div><div>print(m)</div><div>print(det(m))</div></div></div><div><br></div><div><div>[[1 2 3] [4 5 6] [7 8 9]] 6.66133814775094e-16</div><div>from numpy.linalg import inv print(m) im=inv(m) print(im)</div><div><br></div><div>[[1 2 3] [4 5 6] [7 8 9]] [[-4.50359963e+15 9.00719925e+15 -4.50359963e+15] [ 9.00719925e+15 -1.80143985e+16 9.00719925e+15] [-4.50359963e+15 9.00719925e+15 -4.50359963e+15]]</div><div><br></div><div>#to check whether multiplication of a matrix with it's inverse matrix gives identity matrix or not from numpy import eye,allclose print(asmatrix(eye(3))) rs=im*m rs.shape print(rs) allclose(rs,asmatrix(eye(3)))</div><div><br></div><div>[[1. 0. 0.] [0. 1. 0.] [0. 0. 1.]] [[ 12. 8. 8.] [-16. -8. 0.] [ 4. 0. 0.]]&nbsp;</div><div>&nbsp;Out[118]:&nbsp;</div><div>False</div></div>
+        </div>
+        <br>
+        
+        <span class="category">
+            <small>
+                <a>
+                    Python-3.4.3
+                </a>   
+            </small>
+        </span>
+        
+        <span class="tutorial">
+            <small>
+            <a>
+                    Advanced-Matrix-Operations
+             </a>       
+            </small>
+        </span>
+        
+        <span class="minute_range ">
+            <small>
+            <a>
+                    06-07 min
+             </a>       
+            </small>
+        </span>
+        
+        <span class="second_range ">
+            <small>
+                    <a>
+                    50-60 sec
+                    </a>
+            </small>
+        </span>
+       
+        
+        <span class="meta">
+            <small>
+                <i>
+                    30-04-20, 3:11 p.m.
+                </i>
+            </small>
+            
+            <span class="user">
+                Jainhruti1988
+            </span>
+        </span>
+    </div> <!-- /.question -->
+    </div>
+</div> 
+
+<h4><u>Answers:</u></h4>
+<div id="answerPanelWrapper" style="display:none;">
+    <div id="answerNicPanel" style="display:none;"></div>
+</div>
+
+<div id="commentPanelWrapper" style="display:none;">
+    <div id="commentNicPanel" style="display:none;"></div>
+</div>
+
+<div class="row">
+    <div class="answer-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="answer " id="answer3208">
+            
+            <div class="body" id="body3208">
+                m4 = asmatrix([[2,-3,1], [2,0,-1], [1,4,5]]) #Normal 3x3 matrix im4 = inv(m4) #Inverse of the matrix m4 print(allclose(im4*m4, asmatrix(eye(3)))) #eye(3) is a 3x3 identity matrix and allclose checks whether both are same or not.
+            </div>
+            
+            <span class="meta">
+                <small>
+                    <i>
+                        03-05-20, 4:57 p.m.
+                    </i>
+                </small>
+                
+                <span class="user">
+                    pratikbpingale9075@gmail.com
+                </span>
+            </span>
+        </div> <!-- /.answer -->
+        
+        <div class="row">
+            <div class="comments pull-right col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                <!-- displaying comments -->
+                
+                
+                
+                <!-- form to add comment -->
+      
+            </div> <!-- comments -->
+        </div> <!-- /.row -->
+        <br> <hr>
+    </div> <!-- /.answer-wrapper -->
+</div> <!-- /.row -->
+
+
+            <a href="http://forums.spoken-tutorial.org/question/2369/Error in code.replace(' ','-')/ " target="_blank">Click here to reply/comment online</a>
+                    
+                </div> <!-- /#content -->
+            </div> <!-- /#content-inner -->
+        </div>
+        <div id="footer-wrapper" class="container">
+            <div id="footer-inner" class="col-lg-12 col-md-12 col-sm-12">
+                <div class="cc">
+                    <a class="cc-logo" rel="license">
+                        <img src="../../../includes/images/cc-logo-88x31.png" alt="CC logo"> 
+                    </a> Spoken Tutorial Forum by <a href="http://www.iitb.ac.in" target="_blank">IIT Bombay</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+                </div> 
+            </div> <!-- /#footer-inner -->
+        </div> <!-- /#footer-wrapper -->
+    </div> 
+</body>
+</html>

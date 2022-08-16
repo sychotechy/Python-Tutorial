@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>
+	 
+      Spoken Tutorial Forums
+      
+</title>
+        <link rel="stylesheet" href="../../../includes/css/bootstrap_forum.min.css" type="text/css" media="screen" charset="utf-8" />
+         <link rel="stylesheet" href="../../../includes/css/slick.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="../../../includes/css/main_forum.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="../../../includes/css/nice-bar.css" type="text/css" media="screen" charset="utf-8" />
+      <link rel="stylesheet" href="../../../includes/css/theme.blue.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	 <div id="page-wrapper">
+        <div id="header-wrapper">
+            <div id="header-inner">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-brand">
+                                <img id="logo" src="../../../includes/images/logo.png">
+                                Spoken Tutorial Forums
+                                </div>
+                        </div>
+                        </div> <!-- /.container -->
+                </nav>
+            </div> <!-- /#header-inner -->
+        </div>
+        <div id="content-wrapper">
+            <div id="content-inner" class="container">
+                <div id="content" class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <div class="row">
+    <div class="question-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="question ">
+        <div class="title ">
+           Import Error:  DLL load failed: The specified module could not be found
+        </div>
+        
+        <div id="questionNicPanel"></div>
+        <div class="body">
+            <div>Sir/ Madam,</div><div>While&nbsp; I am entering "import matplotlib" command in ipython3, it shows the following:<br></div><div><br></div><div><br></div><div><br></div><div>Microsoft Windows [Version 10.0.17134.1667]<br>(c) 2018 Microsoft Corporation. All rights reserved.<br><br>C:\Users\DELL&gt;ipython3<br>Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)]<br>Type 'copyright', 'credits' or 'license' for more information<br>IPython 7.16.1 -- An enhanced Interactive Python. Type '?' for help.<br><br>In [1]: import numpy<br><br>In [2]: import matplotlib<br>---------------------------------------------------------------------------<br>ImportError&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Traceback (most recent call last)<br>&lt;ipython-input-2-0484cd13f94d&gt; in &lt;module&gt;<br>----&gt; 1 import matplotlib<br><br>c:\users\dell\appdata\local\programs\python\python36\lib\site-packages\matplotlib\__init__.py in &lt;module&gt;<br>&nbsp;&nbsp;&nbsp; 172<br>&nbsp;&nbsp;&nbsp; 173<br>--&gt; 174 _check_versions()<br>&nbsp;&nbsp;&nbsp; 175<br>&nbsp;&nbsp;&nbsp; 176<br><br>c:\users\dell\appdata\local\programs\python\python36\lib\site-packages\matplotlib\__init__.py in _check_versions()<br>&nbsp;&nbsp;&nbsp; 157&nbsp;&nbsp;&nbsp;&nbsp; # Quickfix to ensure Microsoft Visual C++ redistributable<br>&nbsp;&nbsp;&nbsp; 158&nbsp;&nbsp;&nbsp;&nbsp; # DLLs are loaded before importing kiwisolver<br>--&gt; 159&nbsp;&nbsp;&nbsp;&nbsp; from . import ft2font<br>&nbsp;&nbsp;&nbsp; 160<br>&nbsp;&nbsp;&nbsp; 161&nbsp;&nbsp;&nbsp;&nbsp; for modname, minver in [<br><br>ImportError: DLL load failed: The specified module could not be found.<br></div><div><br></div><div><br></div><div><br></div><div><br></div><div>Ultimately&nbsp; I am unable to run %pylab.</div><div><br></div>
+        </div>
+        <br>
+        
+        <span class="category">
+            <small>
+                <a>
+                    Python-3.4.3
+                </a>   
+            </small>
+        </span>
+        
+        <span class="tutorial">
+            <small>
+            <a>
+                    Using-plot-command-interactively
+             </a>       
+            </small>
+        </span>
+        
+        <span class="minute_range ">
+            <small>
+            <a>
+                    01-02 min
+             </a>       
+            </small>
+        </span>
+        
+        <span class="second_range ">
+            <small>
+                    <a>
+                    50-60 sec
+                    </a>
+            </small>
+        </span>
+       
+        
+        <span class="meta">
+            <small>
+                <i>
+                    25-08-20, 8:21 a.m.
+                </i>
+            </small>
+            
+            <span class="user">
+                tsan.chou1993@gmail.com
+            </span>
+        </span>
+    </div> <!-- /.question -->
+    </div>
+</div> 
+
+<h4><u>Answers:</u></h4>
+<div id="answerPanelWrapper" style="display:none;">
+    <div id="answerNicPanel" style="display:none;"></div>
+</div>
+
+<div id="commentPanelWrapper" style="display:none;">
+    <div id="commentNicPanel" style="display:none;"></div>
+</div>
+
+<div class="row">
+    <div class="answer-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="answer " id="answer4439">
+            
+            <div class="body" id="body4439">
+                Installing the Visual C++ Redistributable for Visual Studio 2015 from the link given below may solve the problem. &lt;a href="https://www.microsoft.com/en-US/download/details.aspx?id=48145" target="" title=""&gt;https://www.microsoft.com/en-US/download/details.aspx?id=48145&lt;/a&gt; Please let us know if you face any problem.
+            </div>
+            
+            <span class="meta">
+                <small>
+                    <i>
+                        07-09-20, 10:31 p.m.
+                    </i>
+                </small>
+                
+                <span class="user">
+                    ankitrj.iitb
+                </span>
+            </span>
+        </div> <!-- /.answer -->
+        
+        <div class="row">
+            <div class="comments pull-right col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                <!-- displaying comments -->
+                
+                
+                
+                <!-- form to add comment -->
+      
+            </div> <!-- comments -->
+        </div> <!-- /.row -->
+        <br> <hr>
+    </div> <!-- /.answer-wrapper -->
+</div> <!-- /.row -->
+
+<div class="row">
+    <div class="answer-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="answer " id="answer5388">
+            
+            <div class="body" id="body5388">
+                <div>It looks like the environment variables have become corrupt after the update.&nbsp; The solution is to provide the python interpreter with the path-to-your-module. The simplest solution is to append that <a href="http://net-informations.com/python/intro/path.htm" title="python path" target="">python path</a> to your sys.path list. In your notebook, first try:</div><div><br></div><div>import sys</div><div>sys.path.append('my/path/to/module/folder')</div><div><br></div><div>This isn't a permanent change in sys.path, because when you log out, your environment is reset, so any variables you may have set are lost.</div><div><br></div><div>The better (and more permanent) way to solve this is to set your PYTHONPATH, which provides the interpreter with additional directories look in for python packages/modules.</div><div><br></div><div>from BASH type: export PYTHONPATH=/path/to/new/folder:/another/path/...../ #each path must be separated by a colon</div><div><br></div><div><br></div>
+            </div>
+            
+            <span class="meta">
+                <small>
+                    <i>
+                        29-03-21, 11:54 a.m.
+                    </i>
+                </small>
+                
+                <span class="user">
+                    romankris
+                </span>
+            </span>
+        </div> <!-- /.answer -->
+        
+        <div class="row">
+            <div class="comments pull-right col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                <!-- displaying comments -->
+                
+                
+                
+                <!-- form to add comment -->
+      
+            </div> <!-- comments -->
+        </div> <!-- /.row -->
+        <br> <hr>
+    </div> <!-- /.answer-wrapper -->
+</div> <!-- /.row -->
+
+
+            <a href="http://forums.spoken-tutorial.org/question/3155/Import Error:  DLL load failed: The specified module could not be found.replace(' ','-')/ " target="_blank">Click here to reply/comment online</a>
+                    
+                </div> <!-- /#content -->
+            </div> <!-- /#content-inner -->
+        </div>
+        <div id="footer-wrapper" class="container">
+            <div id="footer-inner" class="col-lg-12 col-md-12 col-sm-12">
+                <div class="cc">
+                    <a class="cc-logo" rel="license">
+                        <img src="../../../includes/images/cc-logo-88x31.png" alt="CC logo"> 
+                    </a> Spoken Tutorial Forum by <a href="http://www.iitb.ac.in" target="_blank">IIT Bombay</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+                </div> 
+            </div> <!-- /#footer-inner -->
+        </div> <!-- /#footer-wrapper -->
+    </div> 
+</body>
+</html>

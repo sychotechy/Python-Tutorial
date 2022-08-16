@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>
+	 
+      Spoken Tutorial Forums
+      
+</title>
+        <link rel="stylesheet" href="../../../includes/css/bootstrap_forum.min.css" type="text/css" media="screen" charset="utf-8" />
+         <link rel="stylesheet" href="../../../includes/css/slick.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="../../../includes/css/main_forum.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="../../../includes/css/nice-bar.css" type="text/css" media="screen" charset="utf-8" />
+      <link rel="stylesheet" href="../../../includes/css/theme.blue.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	 <div id="page-wrapper">
+        <div id="header-wrapper">
+            <div id="header-inner">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-brand">
+                                <img id="logo" src="../../../includes/images/logo.png">
+                                Spoken Tutorial Forums
+                                </div>
+                        </div>
+                        </div> <!-- /.container -->
+                </nav>
+            </div> <!-- /#header-inner -->
+        </div>
+        <div id="content-wrapper">
+            <div id="content-inner" class="container">
+                <div id="content" class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <div class="row">
+    <div class="question-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="question ">
+        <div class="title ">
+           getting started with symbolics
+        </div>
+        
+        <div id="questionNicPanel"></div>
+        <div class="body">
+            <div>Dear All</div><div>I am using jupyter notebook in Python 3</div><div><br></div><div>On typing&nbsp;</div><div><br></div><div>var('x')</div><div>h(x)=x^2</div><div>g(x)=x</div><div>f= Piecewise([[(0,1),h(x)],[(1,2),g(x)]],x)</div><div><br></div><div><br></div><div><br></div><div>I get following reply.</div><div><br></div><div><pre style="overflow: auto; font-family: monospace; padding: 1px 0px; margin-bottom: 0px; line-height: inherit; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-width: 0px; border-style: initial; border-color: initial; vertical-align: baseline;"><span class="ansi-red-fg" style="color: rgb(231, 92, 88);">--------------------------------------------------------------------------</span>
+<span class="ansi-red-fg" style="color: rgb(231, 92, 88);">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg" style="color: rgb(0, 162, 80);">&lt;ipython-input-46-77057750395d&gt;</span> in <span class="ansi-cyan-fg" style="color: rgb(96, 198, 200);">&lt;module&gt;</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">()</span>
+<span class="ansi-green-intense-fg ansi-bold" style="color: rgb(0, 116, 39); font-weight: bold;">      2</span> __tmp__<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">=</span>var<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">"x"</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">;</span> h <span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">=</span> symbolic_expression<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">**</span>Integer<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-cyan-fg" style="color: rgb(96, 198, 200);">2</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">.</span>function<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span>
+<span class="ansi-green-intense-fg ansi-bold" style="color: rgb(0, 116, 39); font-weight: bold;">      3</span> __tmp__<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">=</span>var<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">"x"</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">;</span> g <span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">=</span> symbolic_expression<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">.</span>function<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span>
+<span class="ansi-green-fg" style="color: rgb(0, 162, 80);">----&gt; 4</span><span class="ansi-red-fg" style="color: rgb(231, 92, 88);"> </span>f<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">=</span> Piecewise<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">[</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">[</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>Integer<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-cyan-fg" style="color: rgb(96, 198, 200);">0</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">,</span>Integer<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-cyan-fg" style="color: rgb(96, 198, 200);">1</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">,</span>h<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">]</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">,</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">[</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>Integer<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-cyan-fg" style="color: rgb(96, 198, 200);">1</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">,</span>Integer<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span><span class="ansi-cyan-fg" style="color: rgb(96, 198, 200);">2</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">,</span>g<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">(</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">]</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">]</span><span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">,</span>x<span class="ansi-blue-fg" style="color: rgb(32, 143, 251);">)</span>
+
+<span class="ansi-red-fg" style="color: rgb(231, 92, 88);">NameError</span>: name 'Piecewise' is not defined
+</pre><pre style="overflow: auto; font-family: monospace; padding: 1px 0px; margin-bottom: 0px; line-height: inherit; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-width: 0px; border-style: initial; border-color: initial; vertical-align: baseline;"><br></pre><pre style="overflow: auto; font-family: monospace; padding: 1px 0px; margin-bottom: 0px; line-height: inherit; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-width: 0px; border-style: initial; border-color: initial; vertical-align: baseline;"><br></pre><pre style="overflow: auto; font-family: monospace; padding: 1px 0px; margin-bottom: 0px; line-height: inherit; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-width: 0px; border-style: initial; border-color: initial; vertical-align: baseline;">Kindly help</pre></div><div><br></div>
+        </div>
+        <br>
+        
+        <span class="category">
+            <small>
+                <a>
+                    Python-3.4.3
+                </a>   
+            </small>
+        </span>
+        
+        <span class="tutorial">
+            <small>
+            <a>
+                    Getting-Started-with-Functions
+             </a>       
+            </small>
+        </span>
+        
+        <span class="minute_range ">
+            <small>
+            <a>
+                    00-01 min
+             </a>       
+            </small>
+        </span>
+        
+        <span class="second_range ">
+            <small>
+                    <a>
+                    10-20 sec
+                    </a>
+            </small>
+        </span>
+       
+        
+        <span class="meta">
+            <small>
+                <i>
+                    27-04-20, 10:29 p.m.
+                </i>
+            </small>
+            
+            <span class="user">
+                gaganj1981@gmail.com
+            </span>
+        </span>
+    </div> <!-- /.question -->
+    </div>
+</div> 
+
+<h4><u>Answers:</u></h4>
+<div id="answerPanelWrapper" style="display:none;">
+    <div id="answerNicPanel" style="display:none;"></div>
+</div>
+
+<div id="commentPanelWrapper" style="display:none;">
+    <div id="commentNicPanel" style="display:none;"></div>
+</div>
+
+<div class="row">
+    <div class="answer-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="answer " id="answer2974">
+            
+            <div class="body" id="body2974">
+                Try this<div><br><div>f = piecewise([[(0,1),h(x)],[(1,2),g(x)]],x)</div></div>
+            </div>
+            
+            <span class="meta">
+                <small>
+                    <i>
+                        28-04-20, 12:45 a.m.
+                    </i>
+                </small>
+                
+                <span class="user">
+                    iakashchavan
+                </span>
+            </span>
+        </div> <!-- /.answer -->
+        
+        <div class="row">
+            <div class="comments pull-right col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                <!-- displaying comments -->
+                
+                
+                
+                <!-- form to add comment -->
+      
+            </div> <!-- comments -->
+        </div> <!-- /.row -->
+        <br> <hr>
+    </div> <!-- /.answer-wrapper -->
+</div> <!-- /.row -->
+
+
+            <a href="http://forums.spoken-tutorial.org/question/2281/getting started with symbolics.replace(' ','-')/ " target="_blank">Click here to reply/comment online</a>
+                    
+                </div> <!-- /#content -->
+            </div> <!-- /#content-inner -->
+        </div>
+        <div id="footer-wrapper" class="container">
+            <div id="footer-inner" class="col-lg-12 col-md-12 col-sm-12">
+                <div class="cc">
+                    <a class="cc-logo" rel="license">
+                        <img src="../../../includes/images/cc-logo-88x31.png" alt="CC logo"> 
+                    </a> Spoken Tutorial Forum by <a href="http://www.iitb.ac.in" target="_blank">IIT Bombay</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+                </div> 
+            </div> <!-- /#footer-inner -->
+        </div> <!-- /#footer-wrapper -->
+    </div> 
+</body>
+</html>

@@ -1,0 +1,3418 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Using plot command interactively - English | spoken-tutorial.org
+        </title>
+        <link rel="shortcut icon" href="../../../includes/images/favicon.ico">
+        <link rel="stylesheet" href="../../../includes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="../../../includes/css/font-awesome.min.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="../../../includes/css/main.css" type="text/css" media="screen" charset="utf-8">
+        <link href="../../../includes/css/video-js.min.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            .video-js {
+                padding-top: 56.25%
+            }
+            .vjs-fullscreen {
+                padding-top: 0px;
+            }
+            .playlist-container{
+                background: #1a1a1a;
+                margin-bottom: 20px;
+            }
+            .description, .order {
+                font-size: 13px;
+            }
+            .forward {
+                float: right;
+            }
+            .playlist ul {
+                 height: 330px;
+                 overflow-y: scroll;
+                 margin-bottom: 0px;
+            }
+            .playlist, .playlist-container, .video-container{
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .playlist ul{
+                list-style:none;
+                padding-left: 0px;
+            }
+            .playlist ul .playlist-item{
+                clear: both;
+                overflow: hidden;
+            }
+            .playlist ul .playlist-item.active{
+                background: #3a3a3a;
+            }
+            .playlist ul .playlist-item a{
+                color: white;
+                display: block;
+                overflow: hidden;
+                padding: 15px 10px;
+            }
+            .playlist ul .playlist-item.active a{
+                color: orange;
+            }
+            .playlist ul .playlist-item:hover{
+                background: gray;
+            }
+            .playlist ul .playlist-item .thumb, .playlist ul .playlist-item .thumb .order{
+                padding-right: 10px;
+            }
+            .playlist-info{
+                color: white;
+                padding: 10px;
+                background: black;
+            }
+            .playlist-controls{
+                background: black;
+                border-top: 1px solid #3a3a3a;
+                padding: 10px 0;
+            }
+            .playlist-controls a{
+                color: white;
+            }
+            .playlist-controls span{
+                margin: 0 10px;
+            }
+            #content-wrapper #content-inner div.container{
+                padding-left: 0px;
+            }
+            p.list-group-item-text {
+                margin-top: 7px;
+            }
+            .list-zipfiles {
+                overflow-x: hidden;
+                max-height: 150px;
+            }
+            .review-data pre {
+                margin-bottom: 0px;
+            }
+            .video-js .vjs-tech{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+            }
+        .vjs-tt-cue {
+            font-size: 16px;
+        }
+        .video-js .vjs-text-track {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .custom-jumbotron {
+            background-color: white !important;
+            border: none;
+            padding: 0px !important;
+        }
+        .custom-jumbotron p {
+            padding-left: 20px;
+        }
+        .custom-jumbotron h3 {
+            margin-top: 10px;
+        }
+        .video-visits {
+            text-align: right;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .container.playlist-container.col-lg-12.col-md-12.col-sm-12 {
+            margin-bottom: 10px;
+        }
+        .col-lg-5.col-md-5.col-sm-5.no-padding-right.right-bar {
+            margin-top: 5px;
+        }
+        .video-info{
+            display: none;
+        }
+        .breadcrumb {
+            background: white;
+            margin: 0px;
+        }
+        .list-group-item{
+            border-top: none;
+            padding-top: 0px;
+        }
+        .list-group-item:first-child {
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .hline {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .video-share {
+            margin-bottom: 10px;
+        }
+        .inner-shadow {
+            padding: 15px;
+            /*-webkit-box-shadow: 0px 0px 10px 0px rgba(84, 70, 70, 0.87);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(84, 70, 70, 0.87);
+            box-shadow: 0px 0px 10px 0px rgba(84, 70, 70, 0.87);*/
+            border: 1px solid #ddd;
+        }
+        .inner-sidebar {
+            padding-left: 15px;
+            padding-top: 5px;
+        }
+        .inner-content-body {
+            margin-top: 5px;
+        }
+        .video-info-show-more, .list-group-item-container, .panel {
+            margin-bottom: 14px;
+        }
+        a.list-group-item .list-group-item-heading {
+            color: #337AB7;
+        }
+        .panel-body-heading {
+            font-size: 16px;
+            margin-bottom: 0px;
+            color: #337AB7;
+        }
+        .panel-body .hline {
+            margin-bottom: 8px;
+        }
+        .forum-questions h4 {
+            font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       .forum-questions .question {
+         padding-left: 5px;
+         padding-right: 5px;
+             padding-top: 5px;
+            clear: both;
+        }
+        .forum-questions .question a {
+            font-weight: bold;
+        }
+        .forum-questions .question p {
+            font-weight: normal;
+            padding: 5px;
+            font-size: 13px !important;
+            font-family: Verdana, Arial, Helvetica, sans-serif !important;
+            color: rgb(85, 85, 85) !important;
+            line-height: 18px !important;
+        }
+        .forum-questions .question p span, .forum-questions .question p div {
+            font-size: 13px !important;
+            font-family: Verdana, Arial, Helvetica, sans-serif !important;
+            color: rgb(85, 85, 85) !important;
+            line-height: 18px !important;
+        }
+        .hline-inner {
+            clear: both;
+        }
+        small {
+            padding: 3px 5px;
+            margin: 0 5px 0 0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            background: #424242;
+            color: #ffffff;
+            width: 100px;
+            overflow: hidden;
+        }
+        small.timing {
+            background: #a26dc8;
+        }
+        .forum-post {
+            color: #4F8811;
+        }
+
+    .ScrollStyle
+    {
+        max-height: 370px;
+         min-height: 370px;
+        overflow:scroll;
+
+        float: left;
+        background: white;
+    }
+
+            .video-js.vjs-fullscreen .vjs-tt-cue { font-size: 22px; }
+        </style>
+        <script src="../../../includes/js/video.js"></script>
+    </head>
+    <body>
+        <div id="page-wrapper">
+            <!-- header begin -->
+            <div id="header-wrapper">
+                <nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
+                    <div id="header-inner">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="">
+                                    <img width="110px" src="../../../includes/images/logo.png">
+                                    Spoken <span class="title">Tutorial</span>
+                                </a>
+                            </div>
+                        </div> <!-- /.container-fluid -->
+                    </div> <!-- /#header-inner -->
+                </nav>
+            </div> <!-- /#header-wrapper -->
+            <!-- header end -->
+
+
+
+
+            <div id="content-wrapper">
+                <div id="content-inner" class="container">
+                    <div id="content" class="col-lg-12 col-md-12 col-sm-12">
+                     <b><h4 class="page-title">Using plot command interactively - English</h4></b>
+                        <row>
+                            <div class='container playlist-container col-lg-12 col-md-12 col-sm-12'>
+                                <div class="video-container col-lg-8 col-md-8 col-sm-8">
+                                    <video id="st_video" class="video-js vjs-default-skin" controls preload="auto" width="auto" height="auto" data-setup="{}">
+                                        <source src="./Using-plot-command-interactively-English.ogv" type="video/ogg" />
+                                        <track kind="captions" src="./Using-plot-command-interactively-English.srt" srclang="en" label="English" />
+                                    </video>
+                                </div>
+                                <div class="container">
+                                    <div id="content">
+                                        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                                            <li style="width:190px" class="active" ><a href="#forums" data-toggle="tab">Questions posted on Forums</a></li>
+                                            <li style="width:180px;" ><a style= "min-height: 60px;padding-top: 12px;" href="#tutorials" data-toggle="tab">Python 3.4.3 Tutorials - English </a></li>
+                                            <div id="my-tab-content" class="tab-content">
+                                                <div class="tab-pane active" id="forums" >
+                                                    <div id="forums_Q" class='ScrollStyle' style="width: 32%; " >
+ 
+                                                        
+                                                        <h4 style="font-family: Menlo;font-size: 16px; padding-left: 8px; ">Questions posted on ST Forums: </h4>
+                                                        <ul class="forum-questions" id="forum_Q" style="padding : 6px ">
+     
+                                                        
+
+                                                        <li class="question" id="4355">
+                                                        <a href="../../89/864/answer-to-question-4355.html" target="_blank" class="4355">plot command</a>
+                                                        <p>I did exactly the same as taught in the tutorial and ran the plot command but I am not able to see the plot.Kindly help me out.....it's showing figure 1 but the plot is not visible , only loading can be seen.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">11-12M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 10:48 p.m.</span>
+                                                                
+                                                                    <small>20001002020</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3993">
+                                                        <a href="../../89/864/answer-to-question-3993.html" target="_blank" class="3993">Exercise question</a>
+                                                        <p>How can we solve Exercise 1?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 11:15 a.m.</span>
+                                                                
+                                                                    <small>AnandPatel</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3972">
+                                                        <a href="../../89/864/answer-to-question-3972.html" target="_blank" class="3972">practice code</a>
+                                                        <p>I have problem in running the linspace and plot commands ,even tho I've installed all 3 commands (ipython,numpy,matplotlib).&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;It is showing ERROR:name linspace/plot command is not defined....&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; please help me out for practicing.&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">02-03M</small>
+                                                            <small class="timing">40-50S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 11:39 p.m.</span>
+                                                                
+                                                                    <small>pavureddy1234@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3935">
+                                                        <a href="../../89/864/answer-to-question-3935.html" target="_blank" class="3935">Exercise 1</a>
+                                                        <p>In this question,plot(sin(x)*sin(x))/x.what is the value of x?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 11:04 a.m.</span>
+                                                                
+                                                                    <small>ashna@cek.ac.in</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3550">
+                                                        <a href="../../89/864/answer-to-question-3550.html" target="_blank" class="3550">Unable to run &quot;pylab&quot;</a>
+                                                        <p>DLL Import Failed: Specific Module not foundDear Sir/Ma'am, Its showing this kind of error when running command %pylab in ipython interface.I also installed the C++ Microsoft file from the link given in the installation sheet but its not working.Kindly give some solution to this.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">01-02M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 11, 2021, 11:26 a.m.</span>
+                                                                
+                                                                    <small>sourav44verma</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3535">
+                                                        <a href="../../89/864/answer-to-question-3535.html" target="_blank" class="3535">some lib function is not working</a>
+                                                        <p>i am using Python 3.4.3 windows 64 bit based, linspace(), len(), clf() function are not working in this version. how to do these function in python 3.4.3 version?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">05-06M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:23 a.m.</span>
+                                                                
+                                                                    <small>rajendaras@yahoo.co.in</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3243">
+                                                        <a href="../../89/864/answer-to-question-3243.html" target="_blank" class="3243">don&#39;t show figure when i run code</a>
+                                                        <p>&nbsp;t=linspace(-pi,pi,100)&nbsp;plot(t,cos(t))&nbsp;--&gt;TCL ERROR couldn't open "/usr/share/matplotlib/mpl-data/images/matplotlib.ppm": no such file or&nbsp;&nbsp;directory.&nbsp; &nbsp; &nbsp;please help me. sir/maim
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">06-07M</small>
+                                                            <small class="timing">50-60S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:23 a.m.</span>
+                                                                
+                                                                    <small>divesh7923</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3239">
+                                                        <a href="../../89/864/answer-to-question-3239.html" target="_blank" class="3239">tcl error when i run code don&#39;t show figure</a>
+                                                        <p>&nbsp;t=linspace(-pi,pi,100)&nbsp;plot(t,cos(t))&nbsp;--&gt;TCL ERROR couldn't open "/usr/share/matplotlib/mpl-data/images/matplotlib.ppm": no such file or&nbsp;&nbsp;directory.&nbsp; &nbsp; &nbsp;please help me. sir/maim
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">04-05M</small>
+                                                            <small class="timing">50-60S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 12, 2021, 12:05 p.m.</span>
+                                                                
+                                                                    <small>divesh7923</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3155">
+                                                        <a href="../../89/864/answer-to-question-3155.html" target="_blank" class="3155">Import Error:  DLL load failed: The specified module could not be found</a>
+                                                        <p>Sir/ Madam,While&nbsp; I am entering "import matplotlib" command in ipython3, it shows the following:Microsoft Windows [Version 10.0.17134.1667](c) 2018 Microsoft Corporation. All rights reserved.C:\Users\DELL&gt;ipython3Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)]Type 'copyright', 'credits' or 'license' for more informationIPython 7.16.1 -- An enhanced Interactive Python. Type '?' for help.In [1]: import numpyIn [2]: import matplotlib---------------------------------------------------------------------------ImportError&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Traceback (most recent call last)&lt;ipython-input-2-0484cd13f94d&gt; in &lt;module&gt;----&gt; 1 import matplotlibc:\users\dell\appdata\local\programs\python\python36\lib\site-packages\matplotlib\__init__.py in &lt;module&gt;&nbsp;&nbsp;&nbsp; 172&nbsp;&nbsp;&nbsp; 173--&gt; 174 _check_versions()&nbsp;&nbsp;&nbsp; 175&nbsp;&nbsp;&nbsp; 176c:\users\dell\appdata\local\programs\python\python36\lib\site-packages\matplotlib\__init__.py in _check_versions()&nbsp;&nbsp;&nbsp; 157&nbsp;&nbsp;&nbsp;&nbsp; # Quickfix to ensure Microsoft Visual C++ redistributable&nbsp;&nbsp;&nbsp; 158&nbsp;&nbsp;&nbsp;&nbsp; # DLLs are loaded before importing kiwisolver--&gt; 159&nbsp;&nbsp;&nbsp;&nbsp; from . import ft2font&nbsp;&nbsp;&nbsp; 160&nbsp;&nbsp;&nbsp; 161&nbsp;&nbsp;&nbsp;&nbsp; for modname, minver in [ImportError: DLL load failed: The specified module could not be found.Ultimately&nbsp; I am unable to run %pylab.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">01-02M</small>
+                                                            <small class="timing">50-60S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 1:20 p.m.</span>
+                                                                
+                                                                    <small>tsan.chou1993@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2841">
+                                                        <a href="../../89/864/answer-to-question-2841.html" target="_blank" class="2841">Unable to solve Exercise 1</a>
+                                                        <p>Hi I am unable to solve Exercise 1: plot(sin(x)*sin(x))*xPlease help me with the solution
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 9:57 a.m.</span>
+                                                                
+                                                                    <small>Kaustabh3</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2600">
+                                                        <a href="../../89/864/answer-to-question-2600.html" target="_blank" class="2600">Finding Maxima on graph</a>
+                                                        <p>how to find maxima in plotted graph? sin sq fn?difference between&nbsp;plot(sin(s)*sin(s))/s and&nbsp;plot((sin(s)*sin(s))/s)two different graphs which one is correct
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">02-03M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 13, 2021, 2:34 p.m.</span>
+                                                                
+                                                                    <small>mumthaj89</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2512">
+                                                        <a href="../../89/864/answer-to-question-2512.html" target="_blank" class="2512">How do I install matplotlib .</a>
+                                                        <p>How do I install matplotlib pls tell me the&nbsp;
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">03-04M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 11, 2021, 12:03 a.m.</span>
+                                                                
+                                                                    <small>Minjal</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2497">
+                                                        <a href="../../89/864/answer-to-question-2497.html" target="_blank" class="2497">Installing Pylab</a>
+                                                        <p>I am using ubuntu 18.04. installed latest version of python 3.7 version. done all sorts of installing pylab but its always giving an error "ModuleNotFoundError:&nbsp; no module named matplotlib". please help
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">02-03M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:16 a.m.</span>
+                                                                
+                                                                    <small>akhilesh.thool@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2333">
+                                                        <a href="../../89/864/answer-to-question-2333.html" target="_blank" class="2333">About value</a>
+                                                        <p>is this is correct?&nbsp;In [21]: x=linspace(-pi,pi,100)In [22]: plot((sin(x)*sin(x))/x&nbsp; &nbsp; ...: )Out[22]: [&lt;matplotlib.lines.Line2D at 0x9d513b8&gt;]In [23]:
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 4:41 p.m.</span>
+                                                                
+                                                                    <small>pritishataramnevse.1234567890</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2268">
+                                                        <a href="../../89/864/answer-to-question-2268.html" target="_blank" class="2268">plot(sin(t)*sin(t))/t</a>
+                                                        <p>before executing&nbsp;plot(sin(t)*sin(t))/t it&nbsp;clear using clf()and the execute this command&nbsp;plot(sin(t)*sin(t))/t
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 1:27 p.m.</span>
+                                                                
+                                                                    <small>anjalideore13@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2137">
+                                                        <a href="../../89/864/answer-to-question-2137.html" target="_blank" class="2137">Sin(x) assignment at 8:13</a>
+                                                        <p>Explain in detail sin(x) assignment and concept of finding maxima&nbsp;
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 4:40 p.m.</span>
+                                                                
+                                                                    <small>meghna_bhatia</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2120">
+                                                        <a href="../../89/864/answer-to-question-2120.html" target="_blank" class="2120">error while plotting         plot(sin(x)*sin(x))/x</a>
+                                                        <p>x = linspace(1,100, 50)plot(sin(x)*sin(x))/xwhen i tried to plot this it shows a graph but comes in with a no of errorlikeTypeError: unsupported operand type(s) for /: 'Line2D' and 'float'how to solve this issue
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">06-07M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 12:18 a.m.</span>
+                                                                
+                                                                    <small>varuntk</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2113">
+                                                        <a href="../../89/864/answer-to-question-2113.html" target="_blank" class="2113">Plot (sin(x)*sin(x))/x</a>
+                                                        <p>It gives an error "name 'x' is not defined."I used the command -- plot(x, (sin(x)*sin(x))/x)
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 4:39 p.m.</span>
+                                                                
+                                                                    <small>sakshithakur18@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2101">
+                                                        <a href="../../89/864/answer-to-question-2101.html" target="_blank" class="2101">Exercise 1:</a>
+                                                        <p>(sin(x)*sin(x))/x not executed..please explain
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 9:53 a.m.</span>
+                                                                
+                                                                    <small>madhurigawali31@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2020">
+                                                        <a href="../../89/864/answer-to-question-2020.html" target="_blank" class="2020">plot function</a>
+                                                        <p>Plot (sin(x)*sin(x))/xwhen i am executing this i am getting a message that&nbsp;name 'x' is not defined.will you please tell me what is the mistake
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">05-06M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>Hema1122</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2019">
+                                                        <a href="../../89/864/answer-to-question-2019.html" target="_blank" class="2019">plot function</a>
+                                                        <p>i am not getting a smooth curve on executing the plot function for sin and for cos.will you explain me why.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">05-06M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 2:10 a.m.</span>
+                                                                
+                                                                    <small>Hema1122</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2018">
+                                                        <a href="../../89/864/answer-to-question-2018.html" target="_blank" class="2018">plot function</a>
+                                                        <p>i am not getting a smooth curve on executing the plot function for sin and for cos.will you explain me why.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">05-06M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>Hema1122</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1460">
+                                                        <a href="../../89/864/answer-to-question-1460.html" target="_blank" class="1460">command not working</a>
+                                                        <p>Plot command is not working, even after including python files.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">04-05M</small>
+                                                            <small class="timing">40-50S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 12:40 p.m.</span>
+                                                                
+                                                                    <small>Indrajap</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1436">
+                                                        <a href="../../89/864/answer-to-question-1436.html" target="_blank" class="1436">DLL load failed</a>
+                                                        <p>when i m try to run %pylab , the interpreter showing DLL load failed error
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">02-03M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>Cms</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1431">
+                                                        <a href="../../89/864/answer-to-question-1431.html" target="_blank" class="1431">phyton3-matlablib</a>
+                                                        <p>plot (sin(x)*sin(x))/xin this how to define 'x' value?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>anithachirra</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1429">
+                                                        <a href="../../89/864/answer-to-question-1429.html" target="_blank" class="1429">Plotting graph</a>
+                                                        <p>Hi..I am using Jupyter notepad with python3 online...after plotting the graph i couldnt find maxima for the same..Can anyone help me out of this?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">07-08M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 7:59 a.m.</span>
+                                                                
+                                                                    <small>ANITHAM11</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1418">
+                                                        <a href="../../89/864/answer-to-question-1418.html" target="_blank" class="1418">how to install matplotlib in ipython3</a>
+                                                        <p>how to install matplotlib in ipython3
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">01-02M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:16 a.m.</span>
+                                                                
+                                                                    <small>AMITKUMARSHINDE57</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1410">
+                                                        <a href="../../89/864/answer-to-question-1410.html" target="_blank" class="1410">Exercise 1</a>
+                                                        <p>How to write this command in interpreter
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 5:21 a.m.</span>
+                                                                
+                                                                    <small>tdcse</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1408">
+                                                        <a href="../../89/864/answer-to-question-1408.html" target="_blank" class="1408">pylab</a>
+                                                        <p>how to install pylab
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">02-03M</small>
+                                                            <small class="timing">50-60S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>anithachirra</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1406">
+                                                        <a href="../../89/864/answer-to-question-1406.html" target="_blank" class="1406">plot</a>
+                                                        <p>what is the difference between plot() command in python, plot() command in R programming, i think both are working same manner?it looks all commands in python are same as in R-programming sir? then which language i have to prefer, either R-programming or Python for mathematics computations ,data analysis etc .?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">09-10M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>G.Shankarr</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1403">
+                                                        <a href="../../89/864/answer-to-question-1403.html" target="_blank" class="1403">value of x</a>
+                                                        <p>what should be the value of x in the given problem i have given the value as x=linspace(-1,1,100) but it is giving the plot with errors
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:16 a.m.</span>
+                                                                
+                                                                    <small>krutika.chhajed@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1401">
+                                                        <a href="../../89/864/answer-to-question-1401.html" target="_blank" class="1401">Query on matplotlib functions</a>
+                                                        <p>Respected sir,In this video, you have shown to plot the functions of sin and cos. Apart from these two, what are the other functions we can plot?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">07-08M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>Vimala.ece</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1400">
+                                                        <a href="../../89/864/answer-to-question-1400.html" target="_blank" class="1400">QUERY ON linspace</a>
+                                                        <p>For linspace(0,1,200) we get 200 evenly spaced samples.My doubt is how to you determine the points,especially why is it restricted to 8 decimal places
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">03-04M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 5:03 a.m.</span>
+                                                                
+                                                                    <small>swetha.ece</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1395">
+                                                        <a href="../../89/864/answer-to-question-1395.html" target="_blank" class="1395">error</a>
+                                                        <p>plot(sin(x)*sin(x))/xshowing error as " name x is not defined"
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 12, 2021, 10:51 p.m.</span>
+                                                                
+                                                                    <small>feridoz</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1394">
+                                                        <a href="../../89/864/answer-to-question-1394.html" target="_blank" class="1394">plotting</a>
+                                                        <p>i want to know how does cos(t) and sin(t) differ?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">06-07M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 4:31 p.m.</span>
+                                                                
+                                                                    <small>palak_desai@yahoo.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1392">
+                                                        <a href="../../89/864/answer-to-question-1392.html" target="_blank" class="1392">value of x </a>
+                                                        <p>what is the value of x should setif i assign same as t it shows error in cmd window&nbsp;
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 15, 2021, 1:16 a.m.</span>
+                                                                
+                                                                    <small>Rajneesh.ch</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1390">
+                                                        <a href="../../89/864/answer-to-question-1390.html" target="_blank" class="1390">Related Plot</a>
+                                                        <p>Applied the commandT=LINSPACE(-PI,PI,100)T=PLOT(T,SIN(T)iN THIS CODE, I DRAWN A PLOT, SO i WANT TO KNOW ABOUT THE "Y AXES " VALUES. 
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">11-12M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 13, 2021, 10:28 a.m.</span>
+                                                                
+                                                                    <small>asutosh1984</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1381">
+                                                        <a href="../../89/864/answer-to-question-1381.html" target="_blank" class="1381">%pylab function not working</a>
+                                                        <p>%pylab function not working.. tried install numpy and also download C++ visual C as suggested in the installation sheet&nbsp;the prob still persists
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">01-02M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 4, 2021, 3:49 a.m.</span>
+                                                                
+                                                                    <small>Mudakavi</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1380">
+                                                        <a href="../../89/864/answer-to-question-1380.html" target="_blank" class="1380">Diffrent Colour Arguments</a>
+                                                        <p>What are the different colors we can use such as green,blue and many more.i wrote&nbsp; 
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">02-03M</small>
+                                                            <small class="timing">40-50S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:25 a.m.</span>
+                                                                
+                                                                    <small>kush.patel101140@marwadiuniversity.ac.in</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1370">
+                                                        <a href="../../89/864/answer-to-question-1370.html" target="_blank" class="1370">python</a>
+                                                        <p>is working on ipython is same as working on python 3.5?how to use pylab (plot library ) on idle python 3.5
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">00-01M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 10:30 p.m.</span>
+                                                                
+                                                                    <small>Nigam.1611</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1368">
+                                                        <a href="../../89/864/answer-to-question-1368.html" target="_blank" class="1368">Plot commands not working in Ipython</a>
+                                                        <p>Dear sir/MadamMatplot commands are not&nbsp; working in Ipython&nbsp;
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">11-12M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>yksawarkar</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1366">
+                                                        <a href="../../89/864/answer-to-question-1366.html" target="_blank" class="1366">plot (sin(x)*sin(x))/x</a>
+                                                        <p>question not executed??x is not defined??
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:24 a.m.</span>
+                                                                
+                                                                    <small>spiccyshakti</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1343">
+                                                        <a href="../../89/864/answer-to-question-1343.html" target="_blank" class="1343">python workshop</a>
+                                                        <p>Microsoft Windows [Version 10.0.10240](c) 2015 Microsoft Corporation. All rights reserved.C:\\Users\\Admin&gt;ipython3Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 21:26:53) [MSC v.1916 32 bit (Intel)]Type 'copyright', 'credits' or 'license' for more informationIPython 7.5.0 -- An enhanced Interactive Python. Type '?' for help.In [1]:&nbsp; numpy, matplotlib---------------------------------------------------------------------------NameError&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traceback (most recent call last)&lt;ipython-input-1-78cad429aec3&gt; in &lt;module&gt;----&gt; 1 numpy, matplotlibNameError: name 'numpy' is not definedIn [2]: import numpyIn [3]: import matplotlib---------------------------------------------------------------------------ImportError&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traceback (most recent call last)&lt;ipython-input-3-0484cd13f94d&gt; in &lt;module&gt;----&gt; 1 import matplotlibc:\\users\\admin\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\matplotlib\\__init__.py in &lt;module&gt;&nbsp; &nbsp; 198&nbsp; &nbsp; 199--&gt; 200 _check_versions()&nbsp; &nbsp; 201&nbsp; &nbsp; 202c:\\users\\admin\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\matplotlib\\__init__.py in _check_versions()&nbsp; &nbsp; 192&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;("pyparsing", "2.0.1"),&nbsp; &nbsp; 193&nbsp; &nbsp; &nbsp;]:--&gt; 194&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;module = importlib.import_module(modname)&nbsp; &nbsp; 195&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if LooseVersion(module.__version__) &lt; minver:&nbsp; &nbsp; 196&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;raise ImportError("Matplotlib requires {}&gt;={}; you have {}"c:\\users\\admin\\appdata\\local\\programs\\python\\python37-32\\lib\\importlib\\__init__.py in import_module(name, package)&nbsp; &nbsp; 125&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break&nbsp; &nbsp; 126&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;level += 1--&gt; 127&nbsp; &nbsp; &nbsp;return _bootstrap._gcd_import(name[level:], package, level)&nbsp; &nbsp; 128&nbsp; &nbsp; 129ImportError: DLL load failed: The specified module could not be found.In [4]: import numpy, matplotlib---------------------------------------------------------------------------ImportError&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traceback (most recent call last)&lt;ipython-input-4-1ba94c9f5666&gt; in &lt;module&gt;----&gt; 1 import numpy, matplotlibc:\\users\\admin\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\matplotlib\\__init__.py in &lt;module&gt;&nbsp; &nbsp; 198&nbsp; &nbsp; 199--&gt; 200 _check_versions()&nbsp; &nbsp; 201&nbsp; &nbsp; 202c:\\users\\admin\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\matplotlib\\__init__.py in _check_versions()&nbsp; &nbsp; 192&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;("pyparsing", "2.0.1"),&nbsp; &nbsp; 193&nbsp; &nbsp; &nbsp;]:--&gt; 194&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;module = importlib.import_module(modname)&nbsp; &nbsp; 195&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if LooseVersion(module.__version__) &lt; minver:&nbsp; &nbsp; 196&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;raise ImportError("Matplotlib requires {}&gt;={}; you have {}"c:\\users\\admin\\appdata\\local\\programs\\python\\python37-32\\lib\\importlib\\__init__.py in import_module(name, package)&nbsp; &nbsp; 125&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break&nbsp; &nbsp; 126&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;level += 1--&gt; 127&nbsp; &nbsp; &nbsp;return _bootstrap._gcd_import(name[level:], package, level)&nbsp; &nbsp; 128&nbsp; &nbsp; 129ImportError: DLL load failed: The specified module could not be found.In [5]: import numpy
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">01-02M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 5:31 p.m.</span>
+                                                                
+                                                                    <small>Reyana_1985</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1335">
+                                                        <a href="../../89/864/answer-to-question-1335.html" target="_blank" class="1335">How to save a graph in windows ??</a>
+                                                        <p>There are two ways I tried&nbsp;1) savefig('C://WINDOWS//SYTEM32'), I tried and executed successfully.&nbsp;But when I tried using as per our regular path like as follows2) savefig('C:\\windows\\system32') it doesnt work.&nbsp;&nbsp;Can we use path like second method or not???
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">01-02M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 10:53 p.m.</span>
+                                                                
+                                                                    <small>rahul.chinchore</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1319">
+                                                        <a href="../../89/864/answer-to-question-1319.html" target="_blank" class="1319">Plot (sin(x)*sin(x)) /x.</a>
+                                                        <p>Hi , in this question we have only one parameter. By using one parameter how can we plot the given statement. and the '/x' is after the plot argument statement. so how will it works? can you explain
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">07-08M</small>
+                                                            <small class="timing">50-60S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 8:56 p.m.</span>
+                                                                
+                                                                    <small>esthervs</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1318">
+                                                        <a href="../../89/864/answer-to-question-1318.html" target="_blank" class="1318">import matplotlib error</a>
+                                                        <p>I installed matplotlib but it shows version related message and matplotlib is not import.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">00-01M</small>
+                                                            <small class="timing">40-50S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 5:25 a.m.</span>
+                                                                
+                                                                    <small>amrendra91</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1316">
+                                                        <a href="../../89/864/answer-to-question-1316.html" target="_blank" class="1316">plot() function error</a>
+                                                        <p>Throwing error for x value not found
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">08-09M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 7:45 a.m.</span>
+                                                                
+                                                                    <small>thirukumar</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="1314">
+                                                        <a href="../../89/864/answer-to-question-1314.html" target="_blank" class="1314">import numpy and matplotlab in ipython3</a>
+                                                        <p>Hello Madam/sir,I am unable to import numpy and matplotlab in ipython3 .please solve my problem
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">00-01M</small>
+                                                            <small class="timing">0-10S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 10:53 p.m.</span>
+                                                                
+                                                                    <small>ch.gopikrishnaa</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+                                                            </ul>
+                                                            
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane " id="tutorials" >
+                                                    <div class='playlist col-lg-4 col-md-4 col-sm-4'>
+                                                        <div class='playlist-controls'>
+                                                            <span class='backward'></span>
+                                                            <span class='forward'></span>
+                                                        </div>
+                                                        <ul>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/863/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>1</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with IPython
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item active" data="2">
+                                                        <a href="../../89/864/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'><i class="fa fa-play"></i></span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Using plot command interactively
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/865/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>3</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Embellishing a plot
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/866/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>4</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Saving plots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/867/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>5</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Multiple plots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/868/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>6</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Subplots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/869/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>7</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Additional features of IPython
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/943/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>8</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Loading Data From Files
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/944/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>9</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Plotting Data
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/945/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>10</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Other Types Of Plots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/946/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>11</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Plotting Charts
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/976/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>12</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with Lists
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/986/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>13</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with for
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/987/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>14</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with strings
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/988/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>15</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with files
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1075/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>16</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Parsing data
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1076/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>17</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Statistics
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1077/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>18</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with arrays
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1078/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>19</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Accessing parts of arrays
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1080/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>20</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Image manipulation using Arrays
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1081/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>21</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Basic Matrix Operations
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1082/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>22</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Advanced Matrix Operations
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1083/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>23</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Least square fit
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1084/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>24</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Basic datatypes and operators
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1085/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>25</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Sequence datatypes
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1086/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>26</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Input-output
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1087/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>27</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Conditional Statements
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1088/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>28</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Loops
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1089/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>29</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Manipulating lists
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1090/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>30</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Manipulating strings
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1091/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>31</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with tuples
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1092/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>32</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Dictionaries
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1171/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>33</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Sets in Python
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1172/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>34</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting Started with Functions
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1173/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>35</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Advanced Features of Functions
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1174/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>36</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Using Python Modules
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1175/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>37</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Writing Python Scripts
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1176/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>38</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Testing and Debugging
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1177/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>39</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Handling Errors and Exceptions
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                    $("#tabs").tab();
+                                    });
+                                    </script> 
+                                </div>
+                            </div>
+                        </row>
+                        <row>
+                            <div class="col-lg-7 col-md-7 col-sm-7 no-padding-left">
+                                <ol class="breadcrumb">
+                                    
+                                        
+                                            <li><a href="../Python-3.4.3-Instruction-Sheet-English.pdf" target="_blank">Instruction Sheet</a></li>
+                                        
+                                    
+
+                                    
+                                        
+                                            <li><a href="../Python-3.4.3-Installation-Sheet-English.pdf" target="_blank">Installation Sheet</a></li>
+                                        
+                                    
+                                </ol>
+                                <pre class="custom-jumbotron"><b>Outline:<br /></b>Use Python 3.4.3
+Use Ipython version 5.1.0
+Start IPython with pylab.
+ImportError if matplotlib is not installed
+clf() function
+Use the linspace function to create equally spaced points in a region.
+Find the length of sequences using len function.
+Plot mathematical functions using plot.
+Clear drawing area using clf.
+Usage of buttons in the UI of the plot window such as - save, zoom, move axis, back and forward and Home</pre>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 no-padding-right">
+                                <div class="list-group">
+                                    
+                                        <div  class="list-group-item">
+                                            <a href="./resources/Using-plot-command-interactively-Assignment.pdf" target="_blank" class="list-group-item">
+                                                <h4 class="list-group-item-heading"><i class="fa fa-2 fa-globe"></i> Assignment</h4>
+                                            </a>
+                                            <p class="list-group-item-text">
+                                                <span style="text-align: left">Status: <i class="fa fa-1 fa-check-circle review-accepted" title="Accepted"></i></span>
+                                            </p>
+                                        </div>
+                                    
+                                    
+                                    
+                                    <!-- 
+                                        <div  class="list-group-item">
+                                            <a href="./resources/Using-plot-command-interactively-Slides.zip" target="_blank" class="list-group-item">
+                                                <h4 class="list-group-item-heading"><i class="fa fa-2 fa-globe"></i> Slides</h4>
+                                                
+                                                    
+                                                        
+                                                            <ul class="list-zipfiles">
+                                                                
+                                                                    <li>slides/</li>
+                                                                
+                                                                    <li>slides/St-logo.png</li>
+                                                                
+                                                                    <li>slides/fossee-logo.png</li>
+                                                                
+                                                                    <li>slides/plot_interactively_updated.pdf</li>
+                                                                
+                                                                    <li>slides/slides.tex</li>
+                                                                
+                                                            </ul>
+                                                        
+                                                    
+                                                
+                                            </a>
+                                            <p class="list-group-item-text">
+                                                <span style="text-align: left">Status: <i class="fa fa-1 fa-check-circle review-accepted" title="Accepted"></i></span>
+                                            </p>
+                                        </div>
+                                     -->
+
+                                </div>
+                            </div>
+                        </row>
+                    </div>
+                </div><!-- /#content-inner .container -->
+            </div><!-- /#content-wrapper -->
+
+
+
+
+
+            <div id="footer-wrapper">
+                <div class="container-inner sans-serif">
+                    <div class="container">
+                        <div class="col-lg-8 col-md-8 col-sm-8  footer-links">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://fossee.in/" target="_blank">FOSSEE Project</a></li>
+                                    <li><a href="http://www.scilab.in/" target="_blank">Scilab Project</a></li>
+                                    <li><a href="http://www.oscad.in/" target="_blank">Oscad</a></li>
+                                    <li><a href="http://python.fossee.in/" target="_blank">Python</a></li>
+                                    <li><a href="http://cfd.fossee.in/" target="_blank">CFD</a></li>
+                                    <li><a href="http://or.fossee.in/" target="_blank">OR-Project</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://aakashlabs.org/" target="_blank">Aakash Labs</a></li>
+                                    <li><a href="http://www.co-learn.in/" target="_blank">Co-learn</a></li>
+                                    <li><a href="http://www.sakshat.ac.in/" target="_blank">Education Mission</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://process.spoken-tutorial.org/index.php/Software-Training#About_SELF_Workshops" target="_blank">Software Training</a></li>
+                                    <li><a href="http://process.spoken-tutorial.org/" target="_blank">Creation</a></li>
+                                    <li><a href="https://spoken-tutorial.org/articles/" target="_blank">News</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://spoken-tutorial.org/about" target="_blank">About</a></li>
+                                    <!-- <li><a href="http://localhost:8000/tutorial-search/#" target="_blank">Partners</a></li> -->
+                                    <li><a href="https://spoken-tutorial.org/software-training/" target="_blank">Training</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 license fill">
+                            <div class="fill">
+                                <footer>
+                                    Developed at IIT Bombay <br>
+                                    This work is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" class="ext" target="_blank">Creative Commons</a>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /#page-wrapper -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../../../includes/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../includes/js/bootstrap.min.js"></script>
+        
+        <script>
+            // set video player volume by 20%
+            var myPlayer = videojs('st_video');
+            myPlayer.volume(0.2);
+            currentVideo = $('.playlist-item.active');
+            nextVideo = currentVideo.next('li');
+            prevVideo = currentVideo.prev('li');
+            var tmpHtml = currentVideo.attr('data') + '/' + $('.video-count').html()
+            $('.video-count').html(tmpHtml)
+            if(nextVideo.length){
+                //console.log(nextVideo.children('a').attr('href'));
+                $('.forward').html('<a href="'+nextVideo.children('a').attr('href')+'"><i class="fa fa-1 fa-fast-forward"></i></a>');
+            } else {
+                $('.forward').html('<i class="fa fa-1 fa-fast-forward"></i>');
+            }
+            if(prevVideo.length){
+                //console.log(prevVideo.children('a').attr('href'));
+                $('.backward').html('<a href="'+prevVideo.children('a').attr('href')+'"><i class="fa fa-1 fa-fast-backward"></i></a>');
+            } else {
+                $('.backward').html('<i class="fa fa-1 fa-fast-backward"></i>');
+            }
+        </script>
+        <script type="text/javascript">
+
+            var player,
+    tag = document.createElement('script'),
+    firstScriptTag = document.getElementsByTagName('script')[0];
+    var flag= false;
+  
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    function onPlaybackQualityChange(event) {
+        console.log(event);
+    }
+
+    Number.prototype.between = function (min, max) {
+        return this >= min && this <= max;
+    };
+
+            var ik_player;
+            //this function is called by the API
+            function onYouTubeIframeAPIReady() {
+                //creates the player object
+                ik_player = new YT.Player('player');
+                //Holds a reference to the YouTube player
+                //subscribe to events
+                ik_player.addEventListener("onReady",       "onReady");
+                ik_player.addEventListener("onStateChange", "onStateChange");
+            }
+
+             function formatTime(time){
+        time = Math.round(time);
+        var minutes = Math.floor(time / 60),
+        seconds = time - minutes * 60;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        return minutes + "." + seconds;
+        }
+
+    function onReady(event) {
+        function logDuration() {
+
+         window.setTimeout(logDuration,1000);
+         var cur_time = formatTime(ik_player.getCurrentTime()).toString();
+         var duration=  formatTime(ik_player.getDuration()).toString();
+
+        if(parseFloat(cur_time) == parseFloat(duration.toString())){
+         $('.ScrollStyle').find('.question').css("background-color", "white");
+        }else{
+        trigger(cur_time, duration);
+        }
+       
+            
+
+        return cur_time
+        }
+        logDuration();
+        $("#text").click(function(e){
+                        ik_player.pauseVideo()
+                setForum(logDuration())
+           
+        });
+
+
+    //var title = $('#text').html("Post your Question on the Forum");
+       // $("#text").click(function(e){
+     // e.preventDefault();
+         // alert(logDuration());
+            //title.html('new title'+logDuration());
+       // });
+        }
+
+      function trigger(cur_time, duration){
+      //$("#playerHolder").text("dura"+duration);
+        
+            min_range = '11-12'
+            sec_range = '10-20'
+
+            id = '4355'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '4355' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'4355').css('background-color')
+          if($("#"+'4355').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'4355').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '0-10'
+
+            id = '3993'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3993' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3993').css('background-color')
+          if($("#"+'3993').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3993').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '02-03'
+            sec_range = '40-50'
+
+            id = '3972'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3972' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3972').css('background-color')
+          if($("#"+'3972').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3972').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '0-10'
+
+            id = '3935'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3935' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3935').css('background-color')
+          if($("#"+'3935').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3935').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '01-02'
+            sec_range = '10-20'
+
+            id = '3550'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3550' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3550').css('background-color')
+          if($("#"+'3550').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3550').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '05-06'
+            sec_range = '10-20'
+
+            id = '3535'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3535' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3535').css('background-color')
+          if($("#"+'3535').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3535').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '06-07'
+            sec_range = '50-60'
+
+            id = '3243'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3243' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3243').css('background-color')
+          if($("#"+'3243').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3243').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '04-05'
+            sec_range = '50-60'
+
+            id = '3239'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3239' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3239').css('background-color')
+          if($("#"+'3239').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3239').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '01-02'
+            sec_range = '50-60'
+
+            id = '3155'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3155' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3155').css('background-color')
+          if($("#"+'3155').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3155').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '0-10'
+
+            id = '2841'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2841' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2841').css('background-color')
+          if($("#"+'2841').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2841').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '02-03'
+            sec_range = '10-20'
+
+            id = '2600'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2600' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2600').css('background-color')
+          if($("#"+'2600').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2600').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '03-04'
+            sec_range = '0-10'
+
+            id = '2512'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2512' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2512').css('background-color')
+          if($("#"+'2512').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2512').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '02-03'
+            sec_range = '0-10'
+
+            id = '2497'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2497' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2497').css('background-color')
+          if($("#"+'2497').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2497').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '20-30'
+
+            id = '2333'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2333' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2333').css('background-color')
+          if($("#"+'2333').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2333').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '2268'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2268' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2268').css('background-color')
+          if($("#"+'2268').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2268').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '2137'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2137' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2137').css('background-color')
+          if($("#"+'2137').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2137').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '06-07'
+            sec_range = '10-20'
+
+            id = '2120'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2120' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2120').css('background-color')
+          if($("#"+'2120').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2120').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '2113'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2113' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2113').css('background-color')
+          if($("#"+'2113').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2113').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '20-30'
+
+            id = '2101'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2101' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2101').css('background-color')
+          if($("#"+'2101').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2101').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '05-06'
+            sec_range = '20-30'
+
+            id = '2020'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2020' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2020').css('background-color')
+          if($("#"+'2020').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2020').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '05-06'
+            sec_range = '20-30'
+
+            id = '2019'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2019' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2019').css('background-color')
+          if($("#"+'2019').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2019').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '05-06'
+            sec_range = '20-30'
+
+            id = '2018'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2018' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2018').css('background-color')
+          if($("#"+'2018').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2018').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '04-05'
+            sec_range = '40-50'
+
+            id = '1460'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1460' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1460').css('background-color')
+          if($("#"+'1460').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1460').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '02-03'
+            sec_range = '0-10'
+
+            id = '1436'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1436' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1436').css('background-color')
+          if($("#"+'1436').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1436').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '1431'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1431' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1431').css('background-color')
+          if($("#"+'1431').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1431').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '07-08'
+            sec_range = '10-20'
+
+            id = '1429'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1429' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1429').css('background-color')
+          if($("#"+'1429').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1429').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '01-02'
+            sec_range = '0-10'
+
+            id = '1418'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1418' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1418').css('background-color')
+          if($("#"+'1418').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1418').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '0-10'
+
+            id = '1410'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1410' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1410').css('background-color')
+          if($("#"+'1410').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1410').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '02-03'
+            sec_range = '50-60'
+
+            id = '1408'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1408' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1408').css('background-color')
+          if($("#"+'1408').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1408').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '09-10'
+            sec_range = '10-20'
+
+            id = '1406'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1406' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1406').css('background-color')
+          if($("#"+'1406').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1406').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '1403'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1403' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1403').css('background-color')
+          if($("#"+'1403').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1403').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '07-08'
+            sec_range = '10-20'
+
+            id = '1401'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1401' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1401').css('background-color')
+          if($("#"+'1401').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1401').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '03-04'
+            sec_range = '30-40'
+
+            id = '1400'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1400' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1400').css('background-color')
+          if($("#"+'1400').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1400').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '20-30'
+
+            id = '1395'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1395' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1395').css('background-color')
+          if($("#"+'1395').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1395').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '06-07'
+            sec_range = '0-10'
+
+            id = '1394'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1394' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1394').css('background-color')
+          if($("#"+'1394').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1394').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '20-30'
+
+            id = '1392'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1392' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1392').css('background-color')
+          if($("#"+'1392').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1392').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '11-12'
+            sec_range = '10-20'
+
+            id = '1390'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1390' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1390').css('background-color')
+          if($("#"+'1390').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1390').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '01-02'
+            sec_range = '0-10'
+
+            id = '1381'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1381' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1381').css('background-color')
+          if($("#"+'1381').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1381').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '02-03'
+            sec_range = '40-50'
+
+            id = '1380'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1380' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1380').css('background-color')
+          if($("#"+'1380').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1380').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '00-01'
+            sec_range = '0-10'
+
+            id = '1370'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1370' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1370').css('background-color')
+          if($("#"+'1370').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1370').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '11-12'
+            sec_range = '10-20'
+
+            id = '1368'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1368' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1368').css('background-color')
+          if($("#"+'1368').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1368').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '1366'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1366' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1366').css('background-color')
+          if($("#"+'1366').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1366').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '01-02'
+            sec_range = '20-30'
+
+            id = '1343'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1343' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1343').css('background-color')
+          if($("#"+'1343').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1343').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '01-02'
+            sec_range = '10-20'
+
+            id = '1335'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1335' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1335').css('background-color')
+          if($("#"+'1335').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1335').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '07-08'
+            sec_range = '50-60'
+
+            id = '1319'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1319' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1319').css('background-color')
+          if($("#"+'1319').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1319').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '00-01'
+            sec_range = '40-50'
+
+            id = '1318'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1318' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1318').css('background-color')
+          if($("#"+'1318').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1318').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '08-09'
+            sec_range = '10-20'
+
+            id = '1316'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1316' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1316').css('background-color')
+          if($("#"+'1316').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1316').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '00-01'
+            sec_range = '0-10'
+
+            id = '1314'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '1314' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'1314').css('background-color')
+          if($("#"+'1314').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'1314').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+           }
+                        //for videojs trigger
+            var trackedPlayer = videojs('st_video');
+            var previousTime = 0;
+            var currentTime = 0;
+            trackedPlayer.on('timeupdate', function() {
+            previousTime = currentTime;
+            currentTime = trackedPlayer.currentTime();
+            var cur_time = formatTime(currentTime).toString();
+
+            trigger( cur_time);
+                            $("#text").click(function(e){
+                            trackedPlayer.pause()
+                    setForum(cur_time)
+                 
+                    });
+            
+            });
+ 
+        
+                function setForum(cur_time)
+                {
+                     
+                        var time_split = cur_time.split(".")
+                        var minute = parseFloat(time_split[0]);
+                        var min_range = minute+"-"+(minute+parseFloat(1))
+                        if(parseInt(time_split[1]).between(parseInt(0),parseInt(9))){
+                                    sec_range = "0-10"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(10),parseFloat(19))){
+                                    sec_range = "10-20"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(20),parseFloat(29))){
+                                    sec_range = "20-30"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(30),parseFloat(39))){
+                                    sec_range = "30-40"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(40),parseFloat(49))){
+                                    sec_range = "40-50"
+                        }else {
+                                    sec_range = "50-60"
+                        }
+        
+                         var url = "http://forums.spoken-tutorial.org/new-question/?category=Python 3.4.3&tutorial=Using plot command interactively&minute_range="+min_range+"&second_range="+sec_range;
+                        $("#text").attr("href", url);
+                }
+        </script>
+    </body>
+</html>

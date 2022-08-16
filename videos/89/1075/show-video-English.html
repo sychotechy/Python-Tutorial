@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Parsing data - English | spoken-tutorial.org
+        </title>
+        <link rel="shortcut icon" href="../../../includes/images/favicon.ico">
+        <link rel="stylesheet" href="../../../includes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="../../../includes/css/font-awesome.min.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="../../../includes/css/main.css" type="text/css" media="screen" charset="utf-8">
+        <link href="../../../includes/css/video-js.min.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            .video-js {
+                padding-top: 56.25%
+            }
+            .vjs-fullscreen {
+                padding-top: 0px;
+            }
+            .playlist-container{
+                background: #1a1a1a;
+                margin-bottom: 20px;
+            }
+            .description, .order {
+                font-size: 13px;
+            }
+            .forward {
+                float: right;
+            }
+            .playlist ul {
+                 height: 330px;
+                 overflow-y: scroll;
+                 margin-bottom: 0px;
+            }
+            .playlist, .playlist-container, .video-container{
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .playlist ul{
+                list-style:none;
+                padding-left: 0px;
+            }
+            .playlist ul .playlist-item{
+                clear: both;
+                overflow: hidden;
+            }
+            .playlist ul .playlist-item.active{
+                background: #3a3a3a;
+            }
+            .playlist ul .playlist-item a{
+                color: white;
+                display: block;
+                overflow: hidden;
+                padding: 15px 10px;
+            }
+            .playlist ul .playlist-item.active a{
+                color: orange;
+            }
+            .playlist ul .playlist-item:hover{
+                background: gray;
+            }
+            .playlist ul .playlist-item .thumb, .playlist ul .playlist-item .thumb .order{
+                padding-right: 10px;
+            }
+            .playlist-info{
+                color: white;
+                padding: 10px;
+                background: black;
+            }
+            .playlist-controls{
+                background: black;
+                border-top: 1px solid #3a3a3a;
+                padding: 10px 0;
+            }
+            .playlist-controls a{
+                color: white;
+            }
+            .playlist-controls span{
+                margin: 0 10px;
+            }
+            #content-wrapper #content-inner div.container{
+                padding-left: 0px;
+            }
+            p.list-group-item-text {
+                margin-top: 7px;
+            }
+            .list-zipfiles {
+                overflow-x: hidden;
+                max-height: 150px;
+            }
+            .review-data pre {
+                margin-bottom: 0px;
+            }
+            .video-js .vjs-tech{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+            }
+        .vjs-tt-cue {
+            font-size: 16px;
+        }
+        .video-js .vjs-text-track {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .custom-jumbotron {
+            background-color: white !important;
+            border: none;
+            padding: 0px !important;
+        }
+        .custom-jumbotron p {
+            padding-left: 20px;
+        }
+        .custom-jumbotron h3 {
+            margin-top: 10px;
+        }
+        .video-visits {
+            text-align: right;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .container.playlist-container.col-lg-12.col-md-12.col-sm-12 {
+            margin-bottom: 10px;
+        }
+        .col-lg-5.col-md-5.col-sm-5.no-padding-right.right-bar {
+            margin-top: 5px;
+        }
+        .video-info{
+            display: none;
+        }
+        .breadcrumb {
+            background: white;
+            margin: 0px;
+        }
+        .list-group-item{
+            border-top: none;
+            padding-top: 0px;
+        }
+        .list-group-item:first-child {
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .hline {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .video-share {
+            margin-bottom: 10px;
+        }
+        .inner-shadow {
+            padding: 15px;
+            /*-webkit-box-shadow: 0px 0px 10px 0px rgba(84, 70, 70, 0.87);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(84, 70, 70, 0.87);
+            box-shadow: 0px 0px 10px 0px rgba(84, 70, 70, 0.87);*/
+            border: 1px solid #ddd;
+        }
+        .inner-sidebar {
+            padding-left: 15px;
+            padding-top: 5px;
+        }
+        .inner-content-body {
+            margin-top: 5px;
+        }
+        .video-info-show-more, .list-group-item-container, .panel {
+            margin-bottom: 14px;
+        }
+        a.list-group-item .list-group-item-heading {
+            color: #337AB7;
+        }
+        .panel-body-heading {
+            font-size: 16px;
+            margin-bottom: 0px;
+            color: #337AB7;
+        }
+        .panel-body .hline {
+            margin-bottom: 8px;
+        }
+        .forum-questions h4 {
+            font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       .forum-questions .question {
+         padding-left: 5px;
+         padding-right: 5px;
+             padding-top: 5px;
+            clear: both;
+        }
+        .forum-questions .question a {
+            font-weight: bold;
+        }
+        .forum-questions .question p {
+            font-weight: normal;
+            padding: 5px;
+            font-size: 13px !important;
+            font-family: Verdana, Arial, Helvetica, sans-serif !important;
+            color: rgb(85, 85, 85) !important;
+            line-height: 18px !important;
+        }
+        .forum-questions .question p span, .forum-questions .question p div {
+            font-size: 13px !important;
+            font-family: Verdana, Arial, Helvetica, sans-serif !important;
+            color: rgb(85, 85, 85) !important;
+            line-height: 18px !important;
+        }
+        .hline-inner {
+            clear: both;
+        }
+        small {
+            padding: 3px 5px;
+            margin: 0 5px 0 0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            background: #424242;
+            color: #ffffff;
+            width: 100px;
+            overflow: hidden;
+        }
+        small.timing {
+            background: #a26dc8;
+        }
+        .forum-post {
+            color: #4F8811;
+        }
+
+    .ScrollStyle
+    {
+        max-height: 370px;
+         min-height: 370px;
+        overflow:scroll;
+
+        float: left;
+        background: white;
+    }
+
+            .video-js.vjs-fullscreen .vjs-tt-cue { font-size: 22px; }
+        </style>
+        <script src="../../../includes/js/video.js"></script>
+    </head>
+    <body>
+        <div id="page-wrapper">
+            <!-- header begin -->
+            <div id="header-wrapper">
+                <nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
+                    <div id="header-inner">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="">
+                                    <img width="110px" src="../../../includes/images/logo.png">
+                                    Spoken <span class="title">Tutorial</span>
+                                </a>
+                            </div>
+                        </div> <!-- /.container-fluid -->
+                    </div> <!-- /#header-inner -->
+                </nav>
+            </div> <!-- /#header-wrapper -->
+            <!-- header end -->
+
+
+
+
+            <div id="content-wrapper">
+                <div id="content-inner" class="container">
+                    <div id="content" class="col-lg-12 col-md-12 col-sm-12">
+                     <b><h4 class="page-title">Parsing data - English</h4></b>
+                        <row>
+                            <div class='container playlist-container col-lg-12 col-md-12 col-sm-12'>
+                                <div class="video-container col-lg-8 col-md-8 col-sm-8">
+                                    <video id="st_video" class="video-js vjs-default-skin" controls preload="auto" width="auto" height="auto" data-setup="{}">
+                                        <source src="./Parsing-data-English.ogv" type="video/ogg" />
+                                        <track kind="captions" src="./Parsing-data-English.srt" srclang="en" label="English" />
+                                    </video>
+                                </div>
+                                <div class="container">
+                                    <div id="content">
+                                        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                                            <li style="width:190px" class="active" ><a href="#forums" data-toggle="tab">Questions posted on Forums</a></li>
+                                            <li style="width:180px;" ><a style= "min-height: 60px;padding-top: 12px;" href="#tutorials" data-toggle="tab">Python 3.4.3 Tutorials - English </a></li>
+                                            <div id="my-tab-content" class="tab-content">
+                                                <div class="tab-pane active" id="forums" >
+                                                    <div id="forums_Q" class='ScrollStyle' style="width: 32%; " >
+ 
+                                                        
+                                                        <h4 style="font-family: Menlo;font-size: 16px; padding-left: 8px; ">Questions posted on ST Forums: </h4>
+                                                        <ul class="forum-questions" id="forum_Q" style="padding : 6px ">
+     
+                                                        
+
+                                                        <li class="question" id="4338">
+                                                        <a href="../../89/1075/answer-to-question-4338.html" target="_blank" class="4338">%run marks.py command error in windows</a>
+                                                        <p>In [27]: %run marks.py&nbsp; File "C:\Users\wci\marks.py", line 8&nbsp; &nbsp; if region_code== "A";&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^SyntaxError: invalid syntax
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">09-10M</small>
+                                                            <small class="timing">50-60S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 10:48 p.m.</span>
+                                                                
+                                                                    <small>@its_Prachit</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="4110">
+                                                        <a href="../../89/1075/answer-to-question-4110.html" target="_blank" class="4110">error in %run command</a>
+                                                        <p>after typing the last command %run marks.py , it shows an error as%run marks.py---------------------------------------------------------------------------NameError&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Traceback (most recent call last)~\marks.py in &lt;module&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; math_marks_A.append(math_mark)&nbsp;&nbsp;&nbsp;&nbsp; 10---&gt; 11 math_marks_mean=sum(math_maths_A)/len(math_marks_A)&nbsp;&nbsp;&nbsp;&nbsp; 12 print(math_marks_mean)NameError: name 'math_maths_A' is not defined
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 2:40 a.m.</span>
+                                                                
+                                                                    <small>KAVYA_30</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3506">
+                                                        <a href="../../89/1075/answer-to-question-3506.html" target="_blank" class="3506">parsing data</a>
+                                                        <p>In [29]: %run marks.pyIn [30]: %run marks.py---------------------------------------------------------------------------TypeError&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traceback (most recent call last)~\marks.py in &lt;module&gt;&nbsp; &nbsp; &nbsp;10&nbsp; &nbsp; &nbsp;11---&gt; 12 math_marks_mean = sum(math_marks_A) / len&nbsp; &nbsp; &nbsp;13 (math_marks_A)&nbsp; &nbsp; &nbsp;14 print (math_marks_mean)TypeError: unsupported operand type(s) for /: 'float' and 'builtin_function_or_method'
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 11, 2021, 7:24 a.m.</span>
+                                                                
+                                                                    <small>Adarsh1211</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3422">
+                                                        <a href="../../89/1075/answer-to-question-3422.html" target="_blank" class="3422">%run marks.py error</a>
+                                                        <p>%run marks.pyit shows that&nbsp; math_marks_mean = sum(math_marks_A)/len(math_marks_A)then it shows that type error : unsupported operand type(s) for /: 'float' and 'builtin_function_or_method,
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 10, 2021, 9 a.m.</span>
+                                                                
+                                                                    <small>aryamistry18@gnu.ac.in</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="3126">
+                                                        <a href="../../89/1075/answer-to-question-3126.html" target="_blank" class="3126">%run marks.py</a>
+                                                        <p>&nbsp;I tried running the command after saving the marks.py in the working directory but it still shows%run mark.py&nbsp; File "C:\Users\HP\mark.py", line 2&nbsp; &nbsp; for line in open("student_record.txt")&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^SyntaxError: invalid syntax
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">09-10M</small>
+                                                            <small class="timing">10-20S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 12:47 p.m.</span>
+                                                                
+                                                                    <small>ASHABAREE</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2867">
+                                                        <a href="../../89/1075/answer-to-question-2867.html" target="_blank" class="2867">split</a>
+                                                        <p>can we merge/concatenate/combine two String?
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">04-05M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 3:56 a.m.</span>
+                                                                
+                                                                    <small>HITESH_NINAMA</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2792">
+                                                        <a href="../../89/1075/answer-to-question-2792.html" target="_blank" class="2792">Error in run command</a>
+                                                        <p>Am not getting the mean value as per video. Its showing an error as&nbsp;%run -i "C:\Users\HP\Desktop\marks.py"ERROR:root:File `'C:\\Users\\HP\\Desktop\\marks.py'` not found.Can you please help me...
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 13, 2021, 1:12 p.m.</span>
+                                                                
+                                                                    <small>sweacha.lakshmi@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2548">
+                                                        <a href="../../89/1075/answer-to-question-2548.html" target="_blank" class="2548">Not getting the final output</a>
+                                                        <p>After typing the code and using the run command, I am not able to get the mean value.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">40-50S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 13, 2021, 1:13 p.m.</span>
+                                                                
+                                                                    <small>asad.ad1l</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2543">
+                                                        <a href="../../89/1075/answer-to-question-2543.html" target="_blank" class="2543">%run error</a>
+                                                        <p>i am using windows 10,i place the command, %run desktop/marks.py got an error....In [31]: %run desktop/marks.py---------------------------------------------------------------------------TypeError&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traceback (most recent call last)~\desktop\marks.py in &lt;module&gt;&nbsp; &nbsp; &nbsp; 8&nbsp; &nbsp; &nbsp;if region_code=="A":&nbsp; &nbsp; &nbsp; 9&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;math_marks_A.append(math_mark)---&gt; 10 math_marks_mean = sum(math_marks_A)/len&nbsp; &nbsp; &nbsp;11 (math_marks_A)&nbsp; &nbsp; &nbsp;12 print (math_marks_mean)TypeError: unsupported operand type(s) for /: 'float' and 'builtin_function_or_method'the code as below:math_marks_A=[]for line in open("desktop/student_record.txt"):&nbsp; &nbsp; fields=line.split(";")&nbsp; &nbsp; region_code=fields[0]&nbsp; &nbsp; region_code_stripped=region_code.strip()&nbsp; &nbsp; math_mark_str=fields[5]&nbsp; &nbsp; math_mark=float(math_mark_str)&nbsp; &nbsp; if region_code=="A":&nbsp; &nbsp; &nbsp; &nbsp; math_marks_A.append(math_mark)math_marks_mean = sum(math_marks_A)/len(math_marks_A)print (math_marks_mean)
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">20-30S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 5, 2021, 3:32 a.m.</span>
+                                                                
+                                                                    <small>vineetsingh23</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2153">
+                                                        <a href="../../89/1075/answer-to-question-2153.html" target="_blank" class="2153">Self-assessment solution</a>
+                                                        <p>1. Shouldn't the answer be line.split(';')?; instead of ,
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">11-12M</small>
+                                                            <small class="timing">40-50S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 14, 2021, 8:50 p.m.</span>
+                                                                
+                                                                    <small>sakshithakur18@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2140">
+                                                        <a href="../../89/1075/answer-to-question-2140.html" target="_blank" class="2140">error %run</a>
+                                                        <p>running file marks.py gives error on line 'math_marks_mean=sum(math_mark)/len'--&gt; 'float' object is not iterable.code written in marks.py file is==&gt;math_marks_A=[]for line in open("student_record.txt"):&nbsp;&nbsp;&nbsp; fields = line.split(";")&nbsp;&nbsp;&nbsp; region_code=fields[0]&nbsp;&nbsp;&nbsp; region_code_stripped=region_code.strip()&nbsp;&nbsp;&nbsp; math_mark_str=fields[5]&nbsp;&nbsp;&nbsp; math_mark=float(math_mark_str)&nbsp;&nbsp;&nbsp; if region_code=="A":&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; math_marks_A.append(math_mark)math_marks_mean=sum(math_mark)/len(math_marks_A)Print(math_marks_mean)
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 9, 2021, 8:14 p.m.</span>
+                                                                
+                                                                    <small>gourihalde@gmail.com</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+
+                                                        <li class="question" id="2110">
+                                                        <a href="../../89/1075/answer-to-question-2110.html" target="_blank" class="2110">Difference between the commands</a>
+                                                        <p>I have confusion between&nbsp;%run file&nbsp;and&nbsp;%run -i file. In both the cases, i am getting the output but i want to know which one to be used in which instance. what does&nbsp;-i&nbsp;indicates in the later command.
+                                                        <div class="timing pull-left">
+                                                            <small class="timing">10-11M</small>
+                                                            <small class="timing">30-40S</small>
+                                                        </div>
+                                                            <div class="user pull-right">
+                                                                <span>Dec. 13, 2021, 1:56 p.m.</span>
+                                                                
+                                                                    <small>madhavan.11601828@lpu.in</small>
+                                                                    
+                                                            </div>
+                                                            </p>
+                                                            <hr class="hline-inner" style="margin-top: 18px;margin-bottom: 4px;" />
+                                                            </li>
+      
+                                                            
+                                                            </ul>
+                                                            
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane " id="tutorials" >
+                                                    <div class='playlist col-lg-4 col-md-4 col-sm-4'>
+                                                        <div class='playlist-controls'>
+                                                            <span class='backward'></span>
+                                                            <span class='forward'></span>
+                                                        </div>
+                                                        <ul>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/863/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>1</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with IPython
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/864/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>2</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Using plot command interactively
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/865/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>3</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Embellishing a plot
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/866/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>4</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Saving plots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/867/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>5</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Multiple plots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/868/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>6</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Subplots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/869/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>7</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Additional features of IPython
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/943/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>8</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Loading Data From Files
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/944/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>9</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Plotting Data
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/945/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>10</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Other Types Of Plots
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/946/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>11</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Plotting Charts
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/976/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>12</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with Lists
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/986/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>13</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with for
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/987/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>14</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with strings
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/988/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>15</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with files
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item active" data="16">
+                                                        <a href="../../89/1075/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'><i class="fa fa-play"></i></span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Parsing data
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1076/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>17</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Statistics
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1077/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>18</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with arrays
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1078/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>19</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Accessing parts of arrays
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1080/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>20</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Image manipulation using Arrays
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1081/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>21</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Basic Matrix Operations
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1082/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>22</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Advanced Matrix Operations
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1083/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>23</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Least square fit
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1084/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>24</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Basic datatypes and operators
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1085/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>25</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Sequence datatypes
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1086/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>26</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Input-output
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1087/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>27</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Conditional Statements
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1088/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>28</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Loops
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1089/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>29</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Manipulating lists
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1090/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>30</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Manipulating strings
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1091/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>31</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting started with tuples
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1092/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>32</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Dictionaries
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1171/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>33</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Sets in Python
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1172/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>34</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Getting Started with Functions
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1173/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>35</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Advanced Features of Functions
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1174/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>36</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Using Python Modules
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1175/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>37</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Writing Python Scripts
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1176/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>38</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Testing and Debugging
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        <li class="playlist-item">
+                                                        <a href="../../89/1177/show-video-English.html">
+                                                        <div class='pull-left thumb'>
+                                                            <span class='order'>39</span>
+                                                            <img src="../../../includes/images/thumb-even.png" width=70 >
+                                                        </div>
+                                                        <div class='description'>
+                                                            Handling Errors and Exceptions
+                                                        </div>
+                                                        </a>
+                                                        </li>
+                                                        
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                    $("#tabs").tab();
+                                    });
+                                    </script> 
+                                </div>
+                            </div>
+                        </row>
+                        <row>
+                            <div class="col-lg-7 col-md-7 col-sm-7 no-padding-left">
+                                <ol class="breadcrumb">
+                                    
+                                        
+                                            <li><a href="../Python-3.4.3-Instruction-Sheet-English.pdf" target="_blank">Instruction Sheet</a></li>
+                                        
+                                    
+
+                                    
+                                        
+                                            <li><a href="../Python-3.4.3-Installation-Sheet-English.pdf" target="_blank">Installation Sheet</a></li>
+                                        
+                                    
+                                </ol>
+                                <pre class="custom-jumbotron"><b>Outline:<br /></b>What is Parsing data?
+split function and its syntax
+What is string tokenizing?
+How to split a string on whitespace?
+split function with argument
+strip function and example
+Converting string into floats and integers
+Example to read a huge .txt file line by line and parse each record
+Perform computations on the .txt file
+Execute the file using %run command</pre>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 no-padding-right">
+                                <div class="list-group">
+                                    
+                                        <div  class="list-group-item">
+                                            <a href="./resources/Parsing-data-Assignment.pdf" target="_blank" class="list-group-item">
+                                                <h4 class="list-group-item-heading"><i class="fa fa-2 fa-globe"></i> Assignment</h4>
+                                            </a>
+                                            <p class="list-group-item-text">
+                                                <span style="text-align: left">Status: <i class="fa fa-1 fa-check-circle review-accepted" title="Accepted"></i></span>
+                                            </p>
+                                        </div>
+                                    
+                                    
+                                        <div  class="list-group-item">
+                                            <a href="./resources/Parsing-data-Codefiles.zip" target="_blank" class="list-group-item">
+                                                <h4 class="list-group-item-heading"><i class="fa fa-2 fa-globe"></i> Code files</h4>
+                                                
+                                                    
+                                                        
+                                                            <ul class="list-zipfiles">
+                                                                
+                                                                    <li>student_record.txt</li>
+                                                                
+                                                            </ul>
+                                                        
+                                                    
+                                                
+                                            </a>
+                                            <p class="list-group-item-text">
+                                                <span style="text-align: left">Status: <i class="fa fa-1 fa-check-circle review-accepted" title="Accepted"></i></span>
+                                            </p>
+                                        </div>
+                                    
+                                    
+                                    <!-- 
+                                        <div  class="list-group-item">
+                                            <a href="./resources/Parsing-data-Slides.zip" target="_blank" class="list-group-item">
+                                                <h4 class="list-group-item-heading"><i class="fa fa-2 fa-globe"></i> Slides</h4>
+                                                
+                                                    
+                                                        
+                                                            <ul class="list-zipfiles">
+                                                                
+                                                                    <li>fossee-logo.png</li>
+                                                                
+                                                                    <li>parsing_data_slides.pdf</li>
+                                                                
+                                                                    <li>parsing_data_slides.tex</li>
+                                                                
+                                                                    <li>St-logo.png</li>
+                                                                
+                                                            </ul>
+                                                        
+                                                    
+                                                
+                                            </a>
+                                            <p class="list-group-item-text">
+                                                <span style="text-align: left">Status: <i class="fa fa-1 fa-check-circle review-accepted" title="Accepted"></i></span>
+                                            </p>
+                                        </div>
+                                     -->
+
+                                </div>
+                            </div>
+                        </row>
+                    </div>
+                </div><!-- /#content-inner .container -->
+            </div><!-- /#content-wrapper -->
+
+
+
+
+
+            <div id="footer-wrapper">
+                <div class="container-inner sans-serif">
+                    <div class="container">
+                        <div class="col-lg-8 col-md-8 col-sm-8  footer-links">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://fossee.in/" target="_blank">FOSSEE Project</a></li>
+                                    <li><a href="http://www.scilab.in/" target="_blank">Scilab Project</a></li>
+                                    <li><a href="http://www.oscad.in/" target="_blank">Oscad</a></li>
+                                    <li><a href="http://python.fossee.in/" target="_blank">Python</a></li>
+                                    <li><a href="http://cfd.fossee.in/" target="_blank">CFD</a></li>
+                                    <li><a href="http://or.fossee.in/" target="_blank">OR-Project</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://aakashlabs.org/" target="_blank">Aakash Labs</a></li>
+                                    <li><a href="http://www.co-learn.in/" target="_blank">Co-learn</a></li>
+                                    <li><a href="http://www.sakshat.ac.in/" target="_blank">Education Mission</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://process.spoken-tutorial.org/index.php/Software-Training#About_SELF_Workshops" target="_blank">Software Training</a></li>
+                                    <li><a href="http://process.spoken-tutorial.org/" target="_blank">Creation</a></li>
+                                    <li><a href="https://spoken-tutorial.org/articles/" target="_blank">News</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://spoken-tutorial.org/about" target="_blank">About</a></li>
+                                    <!-- <li><a href="http://localhost:8000/tutorial-search/#" target="_blank">Partners</a></li> -->
+                                    <li><a href="https://spoken-tutorial.org/software-training/" target="_blank">Training</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 license fill">
+                            <div class="fill">
+                                <footer>
+                                    Developed at IIT Bombay <br>
+                                    This work is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" class="ext" target="_blank">Creative Commons</a>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /#page-wrapper -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../../../includes/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../includes/js/bootstrap.min.js"></script>
+        
+        <script>
+            // set video player volume by 20%
+            var myPlayer = videojs('st_video');
+            myPlayer.volume(0.2);
+            currentVideo = $('.playlist-item.active');
+            nextVideo = currentVideo.next('li');
+            prevVideo = currentVideo.prev('li');
+            var tmpHtml = currentVideo.attr('data') + '/' + $('.video-count').html()
+            $('.video-count').html(tmpHtml)
+            if(nextVideo.length){
+                //console.log(nextVideo.children('a').attr('href'));
+                $('.forward').html('<a href="'+nextVideo.children('a').attr('href')+'"><i class="fa fa-1 fa-fast-forward"></i></a>');
+            } else {
+                $('.forward').html('<i class="fa fa-1 fa-fast-forward"></i>');
+            }
+            if(prevVideo.length){
+                //console.log(prevVideo.children('a').attr('href'));
+                $('.backward').html('<a href="'+prevVideo.children('a').attr('href')+'"><i class="fa fa-1 fa-fast-backward"></i></a>');
+            } else {
+                $('.backward').html('<i class="fa fa-1 fa-fast-backward"></i>');
+            }
+        </script>
+        <script type="text/javascript">
+
+            var player,
+    tag = document.createElement('script'),
+    firstScriptTag = document.getElementsByTagName('script')[0];
+    var flag= false;
+  
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    function onPlaybackQualityChange(event) {
+        console.log(event);
+    }
+
+    Number.prototype.between = function (min, max) {
+        return this >= min && this <= max;
+    };
+
+            var ik_player;
+            //this function is called by the API
+            function onYouTubeIframeAPIReady() {
+                //creates the player object
+                ik_player = new YT.Player('player');
+                //Holds a reference to the YouTube player
+                //subscribe to events
+                ik_player.addEventListener("onReady",       "onReady");
+                ik_player.addEventListener("onStateChange", "onStateChange");
+            }
+
+             function formatTime(time){
+        time = Math.round(time);
+        var minutes = Math.floor(time / 60),
+        seconds = time - minutes * 60;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        return minutes + "." + seconds;
+        }
+
+    function onReady(event) {
+        function logDuration() {
+
+         window.setTimeout(logDuration,1000);
+         var cur_time = formatTime(ik_player.getCurrentTime()).toString();
+         var duration=  formatTime(ik_player.getDuration()).toString();
+
+        if(parseFloat(cur_time) == parseFloat(duration.toString())){
+         $('.ScrollStyle').find('.question').css("background-color", "white");
+        }else{
+        trigger(cur_time, duration);
+        }
+       
+            
+
+        return cur_time
+        }
+        logDuration();
+        $("#text").click(function(e){
+                        ik_player.pauseVideo()
+                setForum(logDuration())
+           
+        });
+
+
+    //var title = $('#text').html("Post your Question on the Forum");
+       // $("#text").click(function(e){
+     // e.preventDefault();
+         // alert(logDuration());
+            //title.html('new title'+logDuration());
+       // });
+        }
+
+      function trigger(cur_time, duration){
+      //$("#playerHolder").text("dura"+duration);
+        
+            min_range = '09-10'
+            sec_range = '50-60'
+
+            id = '4338'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '4338' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'4338').css('background-color')
+          if($("#"+'4338').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'4338').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '30-40'
+
+            id = '4110'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '4110' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'4110').css('background-color')
+          if($("#"+'4110').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'4110').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '30-40'
+
+            id = '3506'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3506' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3506').css('background-color')
+          if($("#"+'3506').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3506').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '30-40'
+
+            id = '3422'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3422' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3422').css('background-color')
+          if($("#"+'3422').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3422').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '09-10'
+            sec_range = '10-20'
+
+            id = '3126'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '3126' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'3126').css('background-color')
+          if($("#"+'3126').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'3126').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '04-05'
+            sec_range = '30-40'
+
+            id = '2867'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2867' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2867').css('background-color')
+          if($("#"+'2867').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2867').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '30-40'
+
+            id = '2792'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2792' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2792').css('background-color')
+          if($("#"+'2792').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2792').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '40-50'
+
+            id = '2548'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2548' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2548').css('background-color')
+          if($("#"+'2548').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2548').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '20-30'
+
+            id = '2543'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2543' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2543').css('background-color')
+          if($("#"+'2543').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2543').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '11-12'
+            sec_range = '40-50'
+
+            id = '2153'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2153' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2153').css('background-color')
+          if($("#"+'2153').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2153').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '30-40'
+
+            id = '2140'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2140' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2140').css('background-color')
+          if($("#"+'2140').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2140').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+            min_range = '10-11'
+            sec_range = '30-40'
+
+            id = '2110'
+
+            min_split = min_range.split("-")
+            sec_split = sec_range.split("-")
+            lower = min_split[0]+"."+sec_split[0];
+            upper = min_split[1]+"."+sec_split[1];
+            var div = document.getElementById( '2110' );
+          
+            if((parseFloat(cur_time)).between(parseFloat(lower.toString()),parseFloat(upper.toString()))) 
+            {
+        
+          bgColor = $("#"+'2110').css('background-color')
+          if($("#"+'2110').css("background-color")=="rgb(205, 205, 205)"){
+         //alert("outt2")
+          }else{
+          var el = document.getElementById('forums_Q');
+          el.scrollTop = 0;
+       
+          }
+       
+          $("#"+'2110').prependTo("#forum_Q");
+          div.style.backgroundColor = "#cdcdcd";
+           
+           }else{
+              div.style.backgroundColor = "#ffffff";
+           }
+           
+           }
+                        //for videojs trigger
+            var trackedPlayer = videojs('st_video');
+            var previousTime = 0;
+            var currentTime = 0;
+            trackedPlayer.on('timeupdate', function() {
+            previousTime = currentTime;
+            currentTime = trackedPlayer.currentTime();
+            var cur_time = formatTime(currentTime).toString();
+
+            trigger( cur_time);
+                            $("#text").click(function(e){
+                            trackedPlayer.pause()
+                    setForum(cur_time)
+                 
+                    });
+            
+            });
+ 
+        
+                function setForum(cur_time)
+                {
+                     
+                        var time_split = cur_time.split(".")
+                        var minute = parseFloat(time_split[0]);
+                        var min_range = minute+"-"+(minute+parseFloat(1))
+                        if(parseInt(time_split[1]).between(parseInt(0),parseInt(9))){
+                                    sec_range = "0-10"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(10),parseFloat(19))){
+                                    sec_range = "10-20"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(20),parseFloat(29))){
+                                    sec_range = "20-30"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(30),parseFloat(39))){
+                                    sec_range = "30-40"
+                        }else if(parseFloat(time_split[1]).between(parseFloat(40),parseFloat(49))){
+                                    sec_range = "40-50"
+                        }else {
+                                    sec_range = "50-60"
+                        }
+        
+                         var url = "http://forums.spoken-tutorial.org/new-question/?category=Python 3.4.3&tutorial=Parsing data&minute_range="+min_range+"&second_range="+sec_range;
+                        $("#text").attr("href", url);
+                }
+        </script>
+    </body>
+</html>
