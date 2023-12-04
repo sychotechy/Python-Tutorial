@@ -1,3 +1,4 @@
+Tutorial :- https://sychotechy.github.io/Python-Tutorial/
 ----------------------------------------------------------------------
 Steps for installation of software (for Organisers)
 ----------------------------------------------------------------------
